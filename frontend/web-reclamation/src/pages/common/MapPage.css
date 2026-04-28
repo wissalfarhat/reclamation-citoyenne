@@ -1,0 +1,134 @@
+.map-page {
+  padding: 20px;
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+}
+
+.map-header {
+  margin-bottom: 15px;
+}
+
+.map-header h1 {
+  font-size: 24px;
+  color: #333;
+  margin: 0 0 12px 0;
+}
+
+.map-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.map-filter {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background: white;
+  cursor: pointer;
+}
+
+.map-legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #555;
+}
+
+.legend-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  flex-shrink: 0;
+}
+
+.map-count {
+  font-size: 14px;
+  color: #666;
+  margin-left: auto;
+}
+
+.map-container {
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  min-height: 500px;
+  position: relative;
+}
+
+.map-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 16px;
+  color: #666;
+  gap: 12px;
+  background: #f8f9fa;
+}
+
+.map-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #ddd;
+  border-top-color: #007bff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.map-empty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  z-index: 1000;
+  color: #666;
+}
+
+.popup-content {
+  min-width: 200px;
+  max-width: 280px;
+  font-family: inherit;
+}
+
+@media (max-width: 768px) {
+  .map-page {
+    padding: 10px;
+    height: calc(100vh - 60px);
+  }
+
+  .map-controls {
+    gap: 10px;
+  }
+
+  .map-legend {
+    gap: 8px;
+  }
+
+  .map-count {
+    margin-left: 0;
+  }
+}

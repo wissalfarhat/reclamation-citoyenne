@@ -1,0 +1,249 @@
+.statistics-page {
+  padding: 20px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.page-header h1 {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.filter-group select,
+.filter-group input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+}
+
+.stat-info h3 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.stat-info p {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+.stat-icon {
+  font-size: 48px;
+  opacity: 0.7;
+}
+
+.stats-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stat-card-large {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.stat-card-large h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Section performance agents */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.agent-stats-summary {
+  display: flex;
+  gap: 20px;
+  background: #f8f9fa;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+.summary-item {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.summary-label {
+  font-size: 13px;
+  color: #666;
+}
+
+.summary-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Tableau des agents */
+.agent-table-container {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.agent-table-container h4 {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #555;
+}
+
+.agent-performance-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.agent-performance-table th,
+.agent-performance-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.agent-performance-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+}
+
+.agent-performance-table tr:hover {
+  background: #f8f9fa;
+}
+
+.success-text {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.warning-text {
+  color: #ffc107;
+  font-weight: 600;
+}
+
+.rate-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.rate-badge.high {
+  background: #d4edda;
+  color: #155724;
+}
+
+.rate-badge.medium {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.rate-badge.low {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .statistics-page {
+    padding: 15px;
+  }
+  
+  .stats-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .agent-stats-summary {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .agent-performance-table {
+    font-size: 12px;
+  }
+  
+  .agent-performance-table th,
+  .agent-performance-table td {
+    padding: 8px;
+  }
+  .stat-card-large {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  min-height: 420px;
+  /* ✅ Add these */
+  display: block !important;
+  overflow: visible;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  /* ✅ Add this */
+  align-items: start;
+}
+}
