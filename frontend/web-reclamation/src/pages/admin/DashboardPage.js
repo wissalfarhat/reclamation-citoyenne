@@ -24,20 +24,20 @@ const DashboardPage = () => {
     try {
       console.log(' Loading dashboard...');
 
-      // 🔴 IMPORTANT: verify APIs exist before calling
+      //  IMPORTANT: verify APIs exist before calling
       if (!statsAPI || !reclamationAPI) {
         throw new Error("API not defined");
       }
 
-      // 🔥 FORCE sequential calls (for debugging)
+      //  FORCE sequential calls (for debugging)
       const statsData = await statsAPI.getDashboard();
-      console.log('📊 Stats:', statsData);
+      console.log(' Stats:', statsData);
 
       const reclamationsData = await reclamationAPI.getAll({ limit: 10 });
-      console.log('📋 Reclamations:', reclamationsData);
+      console.log(' Reclamations:', reclamationsData);
 
       const categoryData = await reclamationAPI.getStatsByCategory();
-      console.log('📂 Categories:', categoryData);
+      console.log(' Categories:', categoryData);
 
       setDashboardData(statsData?.data || statsData);
       setRecentReclamations(reclamationsData?.data || []);

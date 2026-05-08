@@ -212,7 +212,7 @@ const ReclamationDetail = () => {
             <h3>Photos</h3>
             <div className="photos-grid">
               {reclamation.photos.map((photo, index) => (
-                <img key={index} src={photo.url} alt={`Photo ${index + 1}`} className="photo-thumb" />
+<img src={`http://localhost:5000${photo.url}`} />
               ))}
             </div>
           </div>

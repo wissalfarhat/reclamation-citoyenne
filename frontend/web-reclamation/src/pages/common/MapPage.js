@@ -182,12 +182,12 @@ const MapPage = () => {
     }
   };
 
-  // ✅ Extract unique zones from reclamations
+  //  Extract unique zones from reclamations
   const zonesDisponibles = [...new Set(
     allReclamations.map(r => r.ville).filter(Boolean)
   )].sort();
 
-  // ✅ Role-based + zone + statut filtering
+  //  Role-based + zone + statut filtering
   const filtered = allReclamations.filter(rec => {
     // Agent: only assigned reclamations
     if (isAgent && rec.idAgent !== user?.id) return false;
@@ -227,7 +227,7 @@ const MapPage = () => {
             <option value="Refusée">Refusée</option>
           </select>
 
-          {/* ✅ Zone filter — Admin only */}
+          {/*  Zone filter — Admin only */}
           {isAdmin && (
             <select
               value={filterZone}
@@ -241,7 +241,7 @@ const MapPage = () => {
             </select>
           )}
 
-          {/* ✅ Agent badge */}
+          {/*  Agent badge */}
           {isAgent && (
             <div style={{
               background: '#e8f4fd',
@@ -335,7 +335,7 @@ const MapPage = () => {
                         <strong>Adresse:</strong> {rec.adresse}
                       </p>
                     )}
-                    {/* ✅ Show agent info */}
+                    {/*  Show agent info */}
                     {rec.agentNom && (
                       <p style={{ margin: '3px 0', fontSize: '13px' }}>
                         <strong>Agent:</strong> {rec.agentPrenom} {rec.agentNom}

@@ -76,7 +76,6 @@ const LoginPage = () => {
   const onRegister = async (data) => {
     setLoading(true);
     try {
-      // ✅ Map password -> motDePasse (backend expects motDePasse)
       const payload = {
         nom:              data.nom,
         prenom:           data.prenom,
@@ -87,7 +86,7 @@ const LoginPage = () => {
         zoneGeographique: data.zoneGeographique || '',
       };
 
-      console.log('📤 Payload envoyé:', payload);
+      console.log(' Payload envoyé:', payload);
 
       const response = await authAPI.register(payload);
 
@@ -98,7 +97,7 @@ const LoginPage = () => {
         toast.error(response.message || 'Erreur lors de la création du compte');
       }
     } catch (error) {
-      console.error('❌ Erreur register:', error);
+      console.error(' Erreur register:', error);
       toast.error(error.response?.data?.message || 'Erreur lors de la création du compte');
     } finally {
       setLoading(false);

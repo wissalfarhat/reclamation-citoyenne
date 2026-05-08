@@ -52,12 +52,12 @@ const ReclamationsPage = () => {
     }
   };
 
-  // ✅ Zones extraites des villes des réclamations (pas des agents)
+  //  Zones extraites des villes des réclamations (pas des agents)
   const zonesDisponibles = [...new Set(
     reclamations.map(r => r.ville).filter(Boolean)
   )];
 
-  // ✅ Filtrage par ville de la réclamation
+  //  Filtrage par ville de la réclamation
   const reclamationsFiltrees = filterZone
     ? reclamations.filter(r => r.ville === filterZone)
     : reclamations;
@@ -71,7 +71,7 @@ const ReclamationsPage = () => {
       {/* Filtres existants */}
       <ReclamationFilters onFilterChange={setFilters} />
 
-      {/* ✅ Filtre par zone */}
+      {/*  Filtre par zone */}
       <div className="zone-filter" style={{ margin: '12px 0' }}>
         <label style={{ marginRight: 8, fontWeight: 500 }}>Filtrer par zone :</label>
         <select

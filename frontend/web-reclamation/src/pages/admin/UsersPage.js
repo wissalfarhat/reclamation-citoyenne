@@ -61,14 +61,14 @@ const UsersPage = () => {
   const handleUpdateUser = async (e) => {
     e.preventDefault();
     try {
-      // ✅ Send typeUtilisateur so backend can update role + profile
+      //  Send typeUtilisateur so backend can update role + profile
       await userAPI.updateUser(editingUser.idUtilisateur, {
         nom:              formData.nom,
         prenom:           formData.prenom,
         telephone:        formData.telephone,
         service:          formData.service,
         zoneGeographique: formData.zoneGeographique,
-        typeUtilisateur:  formData.typeUtilisateur, // ✅ Added
+        typeUtilisateur:  formData.typeUtilisateur, 
       });
       toast.success('Utilisateur modifié avec succès');
       closeModal();
@@ -243,7 +243,7 @@ const UsersPage = () => {
                 </div>
               )}
 
-              {/* ✅ Role selector - shown for both create and edit */}
+              {/*  Role selector - shown for both create and edit */}
               <div className="form-group">
                 <label>Rôle *</label>
                 <select
@@ -254,10 +254,10 @@ const UsersPage = () => {
                   <option value="Administrateur">Administrateur</option>
                   <option value="Citoyen">Citoyen</option>
                 </select>
-                {/* ✅ Warning when changing role */}
+                {/*  Warning when changing role */}
                 {editingUser && formData.typeUtilisateur !== editingUser.typeUtilisateur && (
                   <small style={{ color: '#fd7e14', marginTop: 4, display: 'block' }}>
-                    ⚠️ Le rôle sera changé de "{editingUser.typeUtilisateur}" vers "{formData.typeUtilisateur}"
+                     Le rôle sera changé de "{editingUser.typeUtilisateur}" vers "{formData.typeUtilisateur}"
                   </small>
                 )}
               </div>
@@ -273,7 +273,7 @@ const UsersPage = () => {
                 </div>
               )}
 
-              {/* ✅ Service for admin and agent */}
+              {/*  Service for admin and agent */}
               {(formData.typeUtilisateur === 'AgentMunicipal' ||
                 formData.typeUtilisateur === 'Administrateur') && (
                 <div className="form-row">
@@ -287,7 +287,7 @@ const UsersPage = () => {
                     />
                   </div>
 
-                  {/* ✅ Zone only for agent */}
+                  {/*  Zone only for agent */}
                   {formData.typeUtilisateur === 'AgentMunicipal' && (
                     <div className="form-group">
                       <label>Zone géographique</label>

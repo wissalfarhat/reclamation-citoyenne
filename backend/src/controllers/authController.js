@@ -36,11 +36,11 @@ exports.register = async (req, res) => {
     const userId = userResult.insertId;
     
     // Profil spécifique
-    if (typeUtilisateur === 'Citoyen') {
-      await db.execute(
+if (!typeUtilisateur || typeUtilisateur === 'Citoyen') {
+    await db.execute(
         'INSERT INTO Citoyen (idUtilisateur, adresse, telephone) VALUES (?, ?, ?)',
         [userId, adresse || '', telephone || '']
-      );
+    );
     } else if (typeUtilisateur === 'AgentMunicipal') {
       await db.execute(
         'INSERT INTO AgentMunicipal (idUtilisateur, service, zoneGeographique) VALUES (?, ?, ?)',

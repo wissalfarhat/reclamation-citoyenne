@@ -22,7 +22,7 @@ import ProfilePage from './pages/common/ProfilePage';
 import AgentDashboardPage from './pages/agent/AgentDashboardPage';
 import AssignedReclamationsPage from './pages/agent/AssignedReclamationsPage';
 
-// ✅ Defined BEFORE App
+//  Defined BEFORE App
 const HomeRedirect = () => {
   const { user } = useAuth();
   if (user?.typeUtilisateur === 'Administrateur') return <Navigate to="/dashboard" replace />;
@@ -42,8 +42,8 @@ function App() {
           {/* Routes protégées avec Layout */}
           <Route element={<PrivateRoute />}>
             <Route element={<Layout />}>
-              <Route path="/" element={<HomeRedirect />} /> {/* ✅ Changed */}
-              <Route path="/dashboard" element={<DashboardPage />} /> {/* ✅ Added */}
+              <Route path="/" element={<HomeRedirect />} /> {/*  Changed */}
+              <Route path="/dashboard" element={<DashboardPage />} /> {/*  Added */}
               <Route path="/reclamations" element={<ReclamationsPage />} />
               <Route path="/reclamations/:id" element={<ReclamationDetailPage />} />
               <Route path="/map" element={<MapPage />} />

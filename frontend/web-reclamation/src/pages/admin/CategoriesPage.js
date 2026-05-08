@@ -59,7 +59,7 @@ const handleSubmit = async (e) => {
       closeModal();
       loadCategories();
     } catch (error) {
-      // ✅ Show exact backend message
+      //  Show exact backend message
       toast.error(error.response?.data?.message || 'Erreur lors de l\'opération');
     }
   };
@@ -184,7 +184,7 @@ const handleSubmit = async (e) => {
                 />
               </div>
 
-              {/* ✅ Visual priority selector */}
+              {/*  Visual priority selector */}
               <div className="form-group">
                 <label>
                   Priorité par défaut —{' '}
@@ -193,7 +193,7 @@ const handleSubmit = async (e) => {
                   </span>
                 </label>
 
-                {/* ✅ Quick select buttons */}
+                {/*  Quick select buttons */}
                 <div style={{ display: 'flex', gap: '8px', marginBottom: '12px', flexWrap: 'wrap' }}>
                   {PRIORITY_OPTIONS.map(opt => (
                     <button
@@ -217,7 +217,7 @@ const handleSubmit = async (e) => {
                   ))}
                 </div>
 
-                {/* ✅ Slider */}
+                {/*  Slider */}
                 <input
                   type="range"
                   min="1"
@@ -232,7 +232,7 @@ const handleSubmit = async (e) => {
                   }}
                 />
 
-                {/* ✅ Scale labels */}
+                {/*  Scale labels */}
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: '#999', marginTop: '4px' }}>
                   <span>1 - Très basse</span>
                   <span>5 - Moyenne</span>
